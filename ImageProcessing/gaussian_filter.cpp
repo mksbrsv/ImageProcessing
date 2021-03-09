@@ -1,5 +1,6 @@
 ﻿#include "gaussian_filter.h"
-
+#define _USE_MATH_DEFINES
+#include <math.h>
 // radius will be 2 * radius + 1
 void gaussian_filter::init_gas_kernel(int radius, float sigma) {
 	int size = 2 * radius + 1;
@@ -8,9 +9,11 @@ void gaussian_filter::init_gas_kernel(int radius, float sigma) {
 		x.resize(size);
 	}
 	float norm = 0;
+	int r;
 	for (int i = -radius; i <= radius; i++) {
 		for (int j = -radius; j <= radius; j++) {
-			m_kernel[i + radius][j + radius] = static_cast<float>(exp(-(i * i + j * j))) / (sigma * sigma);
+			r = sqrt(i * i + j * j);
+			m_kernel[i + radius][j + radius] = static_cast<float>(exp(-((r*r)/sigma))) / (M_PI * sigma);
 			norm += m_kernel[i + radius][j + radius];
 		}
 	}
