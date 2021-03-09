@@ -1,6 +1,7 @@
 ﻿#include "gaussian_filter.h"
 #define _USE_MATH_DEFINES
 #include <math.h>
+
 // radius will be 2 * radius + 1
 void gaussian_filter::init_gas_kernel(int radius, float sigma) {
 	int size = 2 * radius + 1;

@@ -36,6 +36,9 @@
     <ClCompile Include="gaussian_filter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="median_filter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="filter.h">
@@ -47,16 +50,19 @@
     <ClInclude Include="gray_filter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="matrix_filter.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="blur_filter.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="gaussian_filter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="filters.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="matrix_filter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="blur_filter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="median_filter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
