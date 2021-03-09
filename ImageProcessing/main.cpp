@@ -1,6 +1,7 @@
 #include "blur_filter.h"
 #include "inversion_filter.h"
 #include "gray_filter.h"
+#include "gaussian_filter.h"
 
 std::string type2str(int type) {
   std::string r;
@@ -27,7 +28,7 @@ std::string type2str(int type) {
 
 int main() {
 	cv::Mat img = cv::imread("C:\\Users\\arryo\\Pictures\\unn.png");
-    blur_filter fil(img);
+    gaussian_filter fil(2, 2, img);
 	cv::Mat res_img = fil.make();
 	cv::imshow("inversion filter", res_img);
 	cv::waitKey(0);
