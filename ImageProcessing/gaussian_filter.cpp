@@ -9,10 +9,10 @@ void gaussian_filter::init_gas_kernel(int radius, float sigma) {
 		x.resize(size);
 	}
 	float norm = 0;
-	int r;
+	float r;
 	for (int i = -radius; i <= radius; i++) {
 		for (int j = -radius; j <= radius; j++) {
-			r = sqrt(i * i + j * j);
+			r = static_cast<float>(sqrt(i * i + j * j));
 			m_kernel[i + radius][j + radius] = static_cast<float>(exp(-((r*r)/sigma))) / (M_PI * sigma);
 			norm += m_kernel[i + radius][j + radius];
 		}
@@ -25,6 +25,8 @@ void gaussian_filter::init_gas_kernel(int radius, float sigma) {
 }
 
 gaussian_filter::gaussian_filter(int radius, float sigma, cv::Mat image) : matrix_filter(std::move(image)) {
+	if (m_image.empty())
+		throw std::logic_error("Can't open image");
 	init_gas_kernel(radius, sigma);
 }
 
