@@ -1,6 +1,7 @@
 ﻿#ifndef FILTER_H
 #define FILTER_H
 #include <opencv2/opencv.hpp>
+#include <algorithm>
 
 class filter {
 protected:
