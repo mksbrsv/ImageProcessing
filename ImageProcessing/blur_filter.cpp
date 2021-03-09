@@ -1,6 +1,8 @@
 ﻿#include "blur_filter.h"
 
 blur_filter::blur_filter(cv::Mat image) : matrix_filter(std::move(image)) {
+	if (m_image.empty())
+		throw std::logic_error("Can't open image");
 	int size_x = 17; 
 	int size_y = 17;
 	m_kernel.resize(size_y);

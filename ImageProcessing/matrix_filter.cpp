@@ -1,9 +1,13 @@
 ﻿#include "matrix_filter.h"
 
 matrix_filter::matrix_filter(cv::Mat image) : m_image(std::move(image)) {
+	if (m_image.empty())
+		throw std::logic_error("Can't open image");
 }
 
 matrix_filter::matrix_filter(nd_vec&& kernel, cv::Mat image) : m_kernel(kernel), m_image(std::move(image)) {
+	if (m_image.empty())
+		throw std::logic_error("Can't open image");
 }
 
 matrix_filter::matrix_filter() : m_kernel(0){
