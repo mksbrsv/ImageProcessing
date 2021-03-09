@@ -27,6 +27,9 @@
     <ClCompile Include="gray_filter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="matrix_filter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="filter.h">
@@ -37,6 +40,9 @@
     </ClInclude>
     <ClInclude Include="gray_filter.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="matrix_filter.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

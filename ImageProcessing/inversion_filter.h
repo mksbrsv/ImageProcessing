@@ -6,9 +6,9 @@
 class inversion_filter : public filter {
 public:
 	explicit inversion_filter(cv::Mat image);
-	cv::Vec3b get_new_pixel(int x, int y) override;
 	cv::Mat make() override;
 private:
+	cv::Vec3b get_new_pixel(int x, int y) override;
 	cv::Mat m_image;
 	
 };
