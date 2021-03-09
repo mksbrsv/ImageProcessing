@@ -152,6 +152,7 @@
   <ItemGroup>
     <ClInclude Include="blur_filter.h" />
     <ClInclude Include="filter.h" />
+    <ClInclude Include="filters.h" />
     <ClInclude Include="gaussian_filter.h" />
     <ClInclude Include="gray_filter.h" />
     <ClInclude Include="inversion_filter.h" />

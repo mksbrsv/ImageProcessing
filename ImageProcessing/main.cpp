@@ -1,8 +1,4 @@
-#include "blur_filter.h"
-#include "inversion_filter.h"
-#include "gray_filter.h"
-#include "gaussian_filter.h"
-
+#include "filters.h"
 
 int main() {
 	cv::Mat img = cv::imread("C:\\Users\\arryo\\Pictures\\unn.png");
