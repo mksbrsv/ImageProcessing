@@ -1,4 +1,5 @@
 #include "inversion_filter.h"
+#include "gray_filter.h"
 
 std::string type2str(int type) {
   std::string r;
@@ -25,7 +26,7 @@ std::string type2str(int type) {
 
 int main() {
 	cv::Mat img = cv::imread("C:\\Users\\arryo\\Pictures\\unn.png");
-	inversion_filter fil(std::move(img));
+    grayscale_filter fil(img);
 	cv::Mat res_img = fil.make();
 	cv::imshow("inversion filter", res_img);
 	cv::waitKey(0);

@@ -24,12 +24,18 @@
     <ClCompile Include="inversion_filter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="gray_filter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="filter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="inversion_filter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gray_filter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

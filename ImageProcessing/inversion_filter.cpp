@@ -1,11 +1,8 @@
 ﻿#include "inversion_filter.h"
 
-inversion_filter::inversion_filter(const cv::Mat& image) : filter(), m_image(image) {
+inversion_filter::inversion_filter(cv::Mat image) : filter(), m_image(std::move(image)) {
 	if (m_image.empty())
 		throw std::logic_error("Can't open image");
-}
-
-inversion_filter::inversion_filter(cv::Mat&& image) : m_image(image) {
 }
 
 cv::Vec3b inversion_filter::get_new_pixel(int x, int y) {
@@ -21,7 +18,7 @@ cv::Mat inversion_filter::make() {
 	cv::Mat result_image(m_image.rows, m_image.cols, CV_8UC3);
 	for (int y = 0; y < m_image.rows; y++) {
 		for (int x = 0; x < m_image.cols; x++) {
-			auto pixel = get_new_pixel(x, y);
+			const auto pixel = get_new_pixel(x, y);
 			result_image.at<cv::Vec3b>(cv::Point(x, y)) = pixel;
 		}
 	}
