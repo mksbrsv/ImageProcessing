@@ -2,6 +2,7 @@
 #define FILTER_H
 #include <opencv2/opencv.hpp>
 #include <algorithm>
+#include <vector>
 
 class filter {
 protected:

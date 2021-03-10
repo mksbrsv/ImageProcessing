@@ -1,8 +1,6 @@
 ﻿#ifndef MATRIX_FILTER_H
 #define MATRIX_FILTER_H
 #include "filter.h"
-#include <vector>
-#include <algorithm>
 
 class matrix_filter : public filter {
 	using nd_vec = std::vector<std::vector<float>>;

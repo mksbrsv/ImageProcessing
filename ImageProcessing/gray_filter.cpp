@@ -16,7 +16,7 @@ cv::Vec3b grayscale_filter::get_new_pixel(int x, int y) {
 }
 
 cv::Mat grayscale_filter::make() {
-	cv::Mat result_image(m_image.rows, m_image.cols, CV_8UC3);
+	cv::Mat result_image(m_image.rows, m_image.cols, m_image.type());
 	for(int y = 0; y < m_image.rows; y++) {
 		for(int x = 0; x < m_image.cols; x++) {
 			const auto pixel = get_new_pixel(x, y);

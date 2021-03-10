@@ -1,7 +1,7 @@
 ﻿#include "gaussian_filter.h"
 #define _USE_MATH_DEFINES
 #include <math.h>
-// radius will be 2 * radius + 1
+
 void gaussian_filter::init_gas_kernel(int radius, float sigma) {
 	int size = 2 * radius + 1;
 	m_kernel.resize(size);
@@ -9,10 +9,10 @@ void gaussian_filter::init_gas_kernel(int radius, float sigma) {
 		x.resize(size);
 	}
 	float norm = 0;
-	int r;
+	float r;
 	for (int i = -radius; i <= radius; i++) {
 		for (int j = -radius; j <= radius; j++) {
-			r = sqrt(i * i + j * j);
+			r = static_cast<float>(sqrt(i * i + j * j));
 			m_kernel[i + radius][j + radius] = static_cast<float>(exp(-((r*r)/sigma))) / (M_PI * sigma);
 			norm += m_kernel[i + radius][j + radius];
 		}
@@ -25,11 +25,13 @@ void gaussian_filter::init_gas_kernel(int radius, float sigma) {
 }
 
 gaussian_filter::gaussian_filter(int radius, float sigma, cv::Mat image) : matrix_filter(std::move(image)) {
+	if (m_image.empty())
+		throw std::logic_error("Can't open image");
 	init_gas_kernel(radius, sigma);
 }
 
 cv::Mat gaussian_filter::make() {
-	cv::Mat result_image(m_image.rows, m_image.cols, CV_8UC3);
+	cv::Mat result_image(m_image.rows, m_image.cols, m_image.type());
 	for(int y = 0; y < m_image.rows; y++) {
 		for(int x = 0; x < m_image.cols; x++) {
 			const auto pixel = get_new_pixel(x, y);
