@@ -2,7 +2,6 @@
 #define _USE_MATH_DEFINES
 #include <math.h>
 
-// radius will be 2 * radius + 1
 void gaussian_filter::init_gas_kernel(int radius, float sigma) {
 	int size = 2 * radius + 1;
 	m_kernel.resize(size);
@@ -32,7 +31,7 @@ gaussian_filter::gaussian_filter(int radius, float sigma, cv::Mat image) : matri
 }
 
 cv::Mat gaussian_filter::make() {
-	cv::Mat result_image(m_image.rows, m_image.cols, CV_8UC3);
+	cv::Mat result_image(m_image.rows, m_image.cols, m_image.type());
 	for(int y = 0; y < m_image.rows; y++) {
 		for(int x = 0; x < m_image.cols; x++) {
 			const auto pixel = get_new_pixel(x, y);

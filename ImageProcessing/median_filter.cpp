@@ -6,11 +6,14 @@ median_filter::median_filter(cv::Mat image) : filter(), m_image(std::move(image)
 }
 
 cv::Mat median_filter::make() {
+	// TODO impl make for median
+
+	cv::Mat result_image(m_image.rows, m_image.cols, m_image.type());
+
+	return result_image;
 }
 
-void median_filter::insertion_sort() {
-	for(auto it = m_window.begin(); it != m_window.end(); ++it) {
-		const auto insertion_point = std::upper_bound(m_window.begin(), it, *it);
-		std::rotate(insertion_point, it, it + 1);
-	}
+cv::Vec3b median_filter::get_new_pixel(int x, int y) {
+	return cv::Vec3b();
 }
+
