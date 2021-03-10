@@ -8,10 +8,10 @@ void make_noise(cv::Mat& image) {
 }
 
 int main() {
-	cv::Mat img = cv::imread("C:\\Users\\arryo\\Pictures\\unn.png");
-	//cv::Mat img = cv::imread("C:\\Users\\Layzeld\\Downloads\\pic\\Annotation 2020-12-03 142825.png");
+	//cv::Mat img = cv::imread("C:\\Users\\arryo\\Pictures\\unn.png");
+	cv::Mat img = cv::imread("C:\\Users\\Layzeld\\Downloads\\pic\\Annotation 2020-12-03 142825.png");
 
-	median_filter fil(img);
+	inversion_filter fil(img);
 	cv::Mat res_img = fil.make();
 	cv::imshow("inversion filter", img);
 	cv::waitKey(0);
