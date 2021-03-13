@@ -5,18 +5,19 @@ morphology::morphology(cv::Mat image) : m_image(std::move(image)) {
 		throw std::logic_error("Can't open image");
 }
 
-cv::Mat morphology::dilation() {
+cv::Mat morphology::dilation() const {
+	cv::Mat result_image = m_image.clone();
+	return result_image;
+}
+
+cv::Mat morphology::erosion() const {
 	return cv::Mat();
 }
 
-cv::Mat morphology::erosion() {
+cv::Mat morphology::opening() const {
 	return cv::Mat();
 }
 
-cv::Mat morphology::opening() {
-	return cv::Mat();
-}
-
-cv::Mat morphology::closing() {
+cv::Mat morphology::closing() const {
 	return cv::Mat();
 }

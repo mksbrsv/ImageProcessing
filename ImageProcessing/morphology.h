@@ -5,13 +5,13 @@
 class morphology {
 public:
 	morphology(cv::Mat image);
-	morphology(const morphology& morf) = delete;
+	morphology(const morphology& morphology) = delete;
 	~morphology() = default;
 
-	cv::Mat dilation();
-	cv::Mat erosion();
-	cv::Mat opening();
-	cv::Mat closing();
+	cv::Mat dilation() const;
+	cv::Mat erosion() const;
+	cv::Mat opening() const;
+	cv::Mat closing() const;
 
 protected:
 	cv::Mat m_image;
