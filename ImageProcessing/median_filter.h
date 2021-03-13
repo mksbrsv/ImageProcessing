@@ -7,7 +7,6 @@ public:
 	median_filter(cv::Mat image);
 	cv::Mat make() override;
 private:
-	void insertion_sort();
 	cv::Mat m_image;
 	std::vector<int> m_window;
 	
