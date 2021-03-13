@@ -27,8 +27,10 @@ int main() {
 	cv::Mat img = cv::imread("C:\\Users\\arryo\\Pictures\\unn.png", cv::IMREAD_ANYCOLOR);
 	//cv::Mat img = cv::imread("C:\\Users\\Layzeld\\Downloads\\pic\\Annotation 2020-12-03 142825.png");
 
-    inversion_filter fil(img);
-	cv::Mat res_img = fil.make();
+    //inversion_filter fil(img);
+	//cv::Mat res_img = fil.make();
+    morphology fil(img);
+    cv::Mat res_img = fil.dilation();
 	cv::imshow("inversion filter", res_img);
 	cv::waitKey(0);
 
