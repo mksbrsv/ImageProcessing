@@ -18,7 +18,7 @@ blur_filter::blur_filter(cv::Mat image) : matrix_filter(std::move(image)) {
 }
 
 cv::Mat blur_filter::make() {
-	cv::Mat result_image(m_image.rows, m_image.cols, m_image.type());
+	cv::Mat result_image(m_image.rows, m_image.cols, CV_8UC3);
 	for(int y = 0; y < m_image.rows; y++) {
 		for(int x = 0; x < m_image.cols; x++) {
 			const auto pixel = get_new_pixel(x, y);
