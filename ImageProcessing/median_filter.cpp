@@ -5,8 +5,7 @@ median_filter::median_filter(cv::Mat image,int size) : matrix_filter(), m_image(
 		throw std::logic_error("Can't open image");
 }
 
-cv::Mat median_filter::make() {
-	
+cv::Mat median_filter::make() {	
 	cv::Mat result_image(m_image.rows, m_image.cols, CV_8UC3);
 	for (int y = 0; y < m_image.rows; y++) {
 		for (int x = 0; x < m_image.cols; x++) {
@@ -14,7 +13,6 @@ cv::Mat median_filter::make() {
 			result_image.at<cv::Vec3b>(cv::Point(x, y)) = pixel;
 		}
 	}
-
 	return result_image;
 }
 
@@ -43,7 +41,8 @@ cv::Vec3b median_filter::get_new_pixel(int x, int y) {
 				tmp[j] = tmp[j + 1];
 				tmp[j + 1] = t;
 			}
-		}
+			}
 	int m = vec_size / 2;
 	return tmp[m];
+}
 }
