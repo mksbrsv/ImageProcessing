@@ -7,12 +7,13 @@ median_filter::median_filter(cv::Mat image,int size) : matrix_filter(), m_image(
 
 cv::Mat median_filter::make() {	
 	cv::Mat result_image(m_image.rows, m_image.cols, CV_8UC3);
-	for (int y = 0; y < m_image.rows; y++) {
-		for (int x = 0; x < m_image.cols; x++) {
+	for (int y = 0; y < m_image.rows - size; y++) {
+		for (int x = 0; x < m_image.cols - size; x++) {
 			const auto pixel = get_new_pixel(x, y);
 			result_image.at<cv::Vec3b>(cv::Point(x, y)) = pixel;
 		}
 	}
+	result_image.resize(m_image.rows - size, m_image.cols - size*10);
 	return result_image;
 }
 
@@ -45,4 +46,4 @@ cv::Vec3b median_filter::get_new_pixel(int x, int y) {
 	int m = vec_size / 2;
 	return tmp[m];
 }
-}
+
