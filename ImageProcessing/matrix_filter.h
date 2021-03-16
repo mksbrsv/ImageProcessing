@@ -3,8 +3,8 @@
 #include "filter.h"
 
 class matrix_filter : public filter {
-	using nd_vec = std::vector<std::vector<float>>;
 public:
+	using nd_vec = std::vector<std::vector<float>>;
 	explicit matrix_filter(cv::Mat image);
 	matrix_filter(nd_vec&& kernel, cv::Mat image);
 
