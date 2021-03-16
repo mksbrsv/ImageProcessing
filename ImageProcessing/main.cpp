@@ -36,11 +36,9 @@ int main() {
 	//cv::Mat img = cv::imread("C:\\Users\\Layzeld\\Downloads\\pic\\Annotation 2020-12-03 142825.png");
     cv::Mat img = cv::imread("C:\\Users\\Layzeld\\Downloads\\pic\\Screenshot-1110.png");
 
-   /* make_noise(img);
-    cv::imshow("noise",img);*/
+    cv::imshow("noise",img);
     median_filter fil(img);
 	cv::Mat res_img = fil.make();
-   // cv::cvtColor(res_img, res_img, cv::COLOR_BGR2GRAY);
 
 	cv::imshow("inversion filter", res_img);
 	cv::waitKey(0);
