@@ -37,7 +37,7 @@ int main() {
     cv::Mat img = cv::imread("C:\\Users\\Layzeld\\Downloads\\pic\\gig8E.png");
     //make_noise(img);
     cv::imshow("noise",img);
-    median_filter fil(img);
+    median_filter fil(img, 7);
 	cv::Mat res_img = fil.make();
     cv::imshow("o", res_img);
 
