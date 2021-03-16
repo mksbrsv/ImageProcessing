@@ -47,7 +47,7 @@ cv::Vec3b median_filter::get_new_pixel(int x, int y) {
 				tmp[j + 1] = t;
 			}
 		}
-	cv::Vec3b result_pixel = cv::Vec3b(tmp[4][0], tmp[4][1], tmp[4][2]);
-	return result_pixel;
+
+	return tmp[4];
 
 }
