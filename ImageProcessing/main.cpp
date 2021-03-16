@@ -39,17 +39,15 @@ std::string type2str(int type) {
 }
 
 int main() {
-	cv::Mat img = cv::imread("C:\\Users\\arryo\\Pictures\\tele.jpg", cv::IMREAD_ANYCOLOR);
+	cv::Mat img = cv::imread("C:\\Users\\arryo\\Pictures\\image.png", cv::IMREAD_ANYCOLOR);
 	//cv::Mat img = cv::imread("C:\\Users\\Layzeld\\Downloads\\pic\\Annotation 2020-12-03 142825.png");
     //cv::Mat img = cv::imread("C:\\Users\\Layzeld\\Downloads\\pic\\Screenshot-1110.png");
 
-    median_filter fil(img, 7);
+    median_filter fil(img, 5);
 	cv::Mat res_img = fil.make();
     cv::imshow("o", res_img);
 
     //cv::medianBlur(img, res_img, 13);
 	//cv::imshow("n", res_img);
 	cv::waitKey(0);
-
-	  cv::waitKey(0);
 }
