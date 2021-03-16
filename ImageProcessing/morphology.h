@@ -15,7 +15,7 @@ public:
 
 protected:
 	cv::Mat m_image;
-	
+
 };
 
 #endif
