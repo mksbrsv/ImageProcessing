@@ -149,6 +149,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="matrix_filter.cpp" />
     <ClCompile Include="median_filter.cpp" />
+    <ClCompile Include="morphology.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="blur_filter.h" />
@@ -159,6 +160,7 @@
     <ClInclude Include="inversion_filter.h" />
     <ClInclude Include="matrix_filter.h" />
     <ClInclude Include="median_filter.h" />
+    <ClInclude Include="morphology.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

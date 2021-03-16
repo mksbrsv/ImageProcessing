@@ -1,7 +1,6 @@
 #include "filters.h"
 
-   void make_noise(cv::Mat &src)
-{
+   void make_noise(cv::Mat &src) {
     cv::Mat noise(src.size(), src.type());
     float m = 34;
     float sigma = 50;
@@ -15,14 +14,22 @@ std::string type2str(int type) {
   uchar chans = 1 + (type >> CV_CN_SHIFT);
 
   switch ( depth ) {
-    case CV_8U:  r = "8U"; break;
-    case CV_8S:  r = "8S"; break;
-    case CV_16U: r = "16U"; break;
-    case CV_16S: r = "16S"; break;
-    case CV_32S: r = "32S"; break;
-    case CV_32F: r = "32F"; break;
-    case CV_64F: r = "64F"; break;
-    default:     r = "User"; break;
+  case CV_8U: r = "8U";
+	  break;
+  case CV_8S: r = "8S";
+	  break;
+  case CV_16U: r = "16U";
+	  break;
+  case CV_16S: r = "16S";
+	  break;
+  case CV_32S: r = "32S";
+	  break;
+  case CV_32F: r = "32F";
+	  break;
+  case CV_64F: r = "64F";
+	  break;
+  default: r = "User";
+	  break;
   }
 
   r += "C";
@@ -36,11 +43,10 @@ int main() {
 	//cv::Mat img = cv::imread("C:\\Users\\Layzeld\\Downloads\\pic\\Annotation 2020-12-03 142825.png");
     cv::Mat img = cv::imread("C:\\Users\\Layzeld\\Downloads\\pic\\Screenshot-1110.png");
 
+
     cv::imshow("noise",img);
     median_filter fil(img);
-	cv::Mat res_img = fil.make();
-
-	cv::imshow("inversion filter", res_img);
-	cv::waitKey(0);
-
+	  cv::Mat res_img = fil.make();
+    cv::imshow("inversion filter", res_img);
+	  cv::waitKey(0);
 }
