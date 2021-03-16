@@ -19,6 +19,7 @@ cv::Vec3b matrix_filter::get_new_pixel(int x, int y) {
 	float result_r = 0;
 	float result_g = 0;
 	float result_b = 0;
+	
 	for(int i = -radius_y; i <= radius_y; i++) {
 		for (int j = -radius_x; j <= radius_x; j++) {
 			const int id_x = std::clamp(x + j, 0, m_image.cols - 1);

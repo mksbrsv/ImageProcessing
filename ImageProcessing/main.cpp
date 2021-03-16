@@ -1,5 +1,13 @@
 #include "filters.h"
 
+   void make_noise(cv::Mat &src)
+{
+    cv::Mat noise(src.size(), src.type());
+    float m = 34;
+    float sigma = 50;
+    cv::randn(noise, m, sigma); //mean and variance
+    src += noise;
+}
 std::string type2str(int type) {
   std::string r;
 
@@ -24,11 +32,16 @@ std::string type2str(int type) {
 }
 
 int main() {
-	cv::Mat img = cv::imread("C:\\Users\\arryo\\Pictures\\unn.png", cv::IMREAD_ANYCOLOR);
+	//cv::Mat img = cv::imread("C:\\Users\\arryo\\Pictures\\unn.png", cv::IMREAD_ANYCOLOR);
 	//cv::Mat img = cv::imread("C:\\Users\\Layzeld\\Downloads\\pic\\Annotation 2020-12-03 142825.png");
+    cv::Mat img = cv::imread("C:\\Users\\Layzeld\\Downloads\\pic\\Screenshot-1110.png");
 
-    gaussian_filter fil(12, 4, img);
+   /* make_noise(img);
+    cv::imshow("noise",img);*/
+    median_filter fil(img);
 	cv::Mat res_img = fil.make();
+   // cv::cvtColor(res_img, res_img, cv::COLOR_BGR2GRAY);
+
 	cv::imshow("inversion filter", res_img);
 	cv::waitKey(0);
 
