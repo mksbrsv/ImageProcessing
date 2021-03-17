@@ -1,4 +1,5 @@
 # ImageProcessing
+Description: this repository is a laboratory work at university. We're using C++ and OpenCV.
 ## To-do tasks
 - Dilation
 - Erosion
