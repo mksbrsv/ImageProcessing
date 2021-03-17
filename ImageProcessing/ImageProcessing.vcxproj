@@ -142,6 +142,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="blur_filter.cpp" />
+    <ClCompile Include="dilation.cpp" />
+    <ClCompile Include="erosion.cpp" />
     <ClCompile Include="filter.cpp" />
     <ClCompile Include="gaussian_filter.cpp" />
     <ClCompile Include="gray_filter.cpp" />
@@ -153,6 +155,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="blur_filter.h" />
+    <ClInclude Include="dilation.h" />
+    <ClInclude Include="erosion.h" />
     <ClInclude Include="filter.h" />
     <ClInclude Include="filters.h" />
     <ClInclude Include="gaussian_filter.h" />

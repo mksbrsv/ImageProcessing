@@ -43,9 +43,13 @@ int main() {
 	//cv::Mat img = cv::imread("C:\\Users\\Layzeld\\Downloads\\pic\\Annotation 2020-12-03 142825.png");
     //cv::Mat img = cv::imread("C:\\Users\\Layzeld\\Downloads\\pic\\Screenshot-1110.png");
 
-	morphology mor(img);
+	morph::dilation mor(img);
 	cv::Mat res_img = mor.make();
 	cv::imshow("mor", res_img);
+	std::cout << "img chan" << img.channels() << std::endl;
+	std::cout << "res_img chan" << img.channels() << std::endl;
+	std::cout << "img type" << img.type() << std::endl;
+	std::cout << "res_img type" << img.type() << std::endl;
 //    median_filter fil(img, 5);
 //	cv::Mat res_img = fil.make();
 //    cv::imshow("o", res_img);

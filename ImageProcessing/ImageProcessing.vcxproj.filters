@@ -54,6 +54,12 @@
     <ClCompile Include="morphology.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="erosion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dilation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="filters.h">
@@ -81,6 +87,12 @@
       <Filter>Header Files\matrix filters</Filter>
     </ClInclude>
     <ClInclude Include="morphology.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dilation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="erosion.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
