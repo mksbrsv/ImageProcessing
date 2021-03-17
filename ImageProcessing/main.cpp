@@ -1,9 +1,9 @@
 #include "filters.h"
 
-   void make_noise(cv::Mat &src) {
+void make_noise(cv::Mat &src) {
     cv::Mat noise(src.size(), src.type());
     float m = 34;
-    float sigma = 50;
+    float sigma = 20;
     cv::randn(noise, m, sigma); //mean and variance
     src += noise;
 }
@@ -39,7 +39,7 @@ std::string type2str(int type) {
 }
 
 int main() {
-	//cv::Mat img = cv::imread("C:\\Users\\arryo\\Pictures\\unn.png", cv::IMREAD_ANYCOLOR);
+	cv::Mat img = cv::imread("C:\\Users\\arryo\\Pictures\\unn.png", cv::IMREAD_ANYCOLOR);
 	//cv::Mat img = cv::imread("C:\\Users\\Layzeld\\Downloads\\pic\\Annotation 2020-12-03 142825.png");
     cv::Mat img = cv::imread("C:\\Users\\Layzeld\\Downloads\\pic\\Screenshot-1110 - Copy.png");
     //make_noise(img);
@@ -48,8 +48,12 @@ int main() {
 	cv::Mat res_img = fil.make();
     cv::imshow("o", res_img);
 
-    //cv::medianBlur(img, res_img, 13);
-	//cv::imshow("n", res_img);
+	morphology mor(img);
+	cv::Mat res_img = mor.make();
+	cv::imshow("mor", res_img);
+//    median_filter fil(img, 5);
+//	cv::Mat res_img = fil.make();
+//    cv::imshow("o", res_img);
+//
 	cv::waitKey(0);
-
 }
