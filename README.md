@@ -1,6 +1,16 @@
 # ImageProcessing
 ## To-do tasks
-- inversion filter - done
-- grayscale filter - done
-- blur filter - done
-- gaussian filter - done
+- Dilation
+- Erosion
+- Opening
+- Closing
+## Done
+- Dot filters
+-- inversion filter
+-- grayscale filter
+- Matrix filters
+-- blur filter
+-- gaussian filter
+-- median filter
+- Morphology operations
+
