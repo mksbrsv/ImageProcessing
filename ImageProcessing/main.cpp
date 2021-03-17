@@ -41,10 +41,10 @@ std::string type2str(int type) {
 int main() {
 	//cv::Mat img = cv::imread("C:\\Users\\arryo\\Pictures\\unn.png", cv::IMREAD_ANYCOLOR);
 	//cv::Mat img = cv::imread("C:\\Users\\Layzeld\\Downloads\\pic\\Annotation 2020-12-03 142825.png");
-    cv::Mat img = cv::imread("C:\\Users\\Layzeld\\Downloads\\pic\\gig8E.png");
+    cv::Mat img = cv::imread("C:\\Users\\Layzeld\\Downloads\\pic\\Screenshot-1110 - Copy.png");
     //make_noise(img);
     cv::imshow("noise",img);
-    median_filter fil(img, 7);
+    median_filter fil(img, 9);
 	cv::Mat res_img = fil.make();
     cv::imshow("o", res_img);
 

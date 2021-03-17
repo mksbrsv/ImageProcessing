@@ -13,7 +13,7 @@ cv::Mat median_filter::make() {
 			result_image.at<cv::Vec3b>(cv::Point(x, y)) = pixel;
 		}
 	}
-	result_image.resize(m_image.rows - size, m_image.cols - size*10);
+	result_image.resize(m_image.rows - size, m_image.cols);
 	return result_image;
 }
 
