@@ -9,8 +9,8 @@
   - inversion filter
   - grayscale filter
 - Matrix filters
-  -- blur filter
-  -- gaussian filter
-  -- median filter
+  - blur filter
+  - gaussian filter
+  - median filter
 - Morphology operations
 
