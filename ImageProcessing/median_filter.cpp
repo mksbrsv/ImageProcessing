@@ -5,7 +5,7 @@ median_filter::median_filter(cv::Mat image, int size) : matrix_filter(), m_image
 		throw std::logic_error("Can't open image");
 }
 
-median_filter::median_filter(nd_vec&& kernel, cv::Mat image) : matrix_filter(std::move(kernel), image) {
+median_filter::median_filter(nd_vec&& kernel, cv::Mat image) : matrix_filter(std::move(kernel), image), m_size(kernel.size()) {
 	if (m_image.empty())
 		throw std::logic_error("Can't open image");
 }
