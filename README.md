@@ -13,5 +13,4 @@ Description: this repository is a laboratory work at university. We're using C++
   - blur filter
   - gaussian filter
   - median filter
-- Morphology operations
 
