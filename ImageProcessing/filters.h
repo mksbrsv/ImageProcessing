@@ -8,4 +8,5 @@
 #include "median_filter.h"
 #include "morphology.h"
 #include "linear_tension.h"
+#include "perfect_reflector.h"
 #endif

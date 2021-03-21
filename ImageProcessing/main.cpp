@@ -41,15 +41,15 @@ std::string type2str(int type) {
 
 int main() {
 	//cv::Mat img = cv::imread("C:\\Users\\arryo\\Pictures\\unn.png", cv::IMREAD_ANYCOLOR);
-	cv::Mat img = cv::imread("C:\\Users\\Layzeld\\Downloads\\pic\\tl4qSLfsKp4.jpg");
-    //cv::Mat img = cv::imread("C:\\Users\\Layzeld\\Downloads\\pic\\Screenshot-1110 - Copy.png");
+	cv::Mat img = cv::imread("C:\\Users\\Layzeld\\Downloads\\pic\\man.png");
+    //cv::Mat img = cv::imread("C:\\Users\\Layzeld\\Downloads\\pic\\tl4qSLfsKp4.jpg");
 
    // make_noise(img);
-    cv::imshow("noise",img);
-    linear_tension fil(img);
+    cv::imshow("orig",img);
+	linear_tension fil(img);
 	cv::Mat res_img = fil.make();
 
-    cv::imshow("out", res_img);
+    cv::imshow("linear_tension", res_img);
 
 
 	morphology mor(img);
