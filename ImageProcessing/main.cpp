@@ -41,8 +41,8 @@ std::string type2str(int type) {
 
 int main() {
 	//cv::Mat img = cv::imread("C:\\Users\\arryo\\Pictures\\unn.png", cv::IMREAD_ANYCOLOR);
-	cv::Mat img = cv::imread("C:\\Users\\Layzeld\\Downloads\\pic\\man.png");
-    //cv::Mat img = cv::imread("C:\\Users\\Layzeld\\Downloads\\pic\\tl4qSLfsKp4.jpg");
+	//cv::Mat img = cv::imread("C:\\Users\\Layzeld\\Downloads\\pic\\man.png");
+    cv::Mat img = cv::imread("C:\\Users\\Layzeld\\Downloads\\pic\\tl4qSLfsKp4.jpg");
 
    // make_noise(img);
     cv::imshow("orig",img);
