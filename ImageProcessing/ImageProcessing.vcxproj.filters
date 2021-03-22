@@ -58,6 +58,10 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="perfect_reflector.cpp">
+    <ClCompile Include="erosion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dilation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -89,11 +93,17 @@
     <ClInclude Include="morphology.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+
     <ClInclude Include="linear_tension.h">
       <Filter>Header Files\dot filters</Filter>
     </ClInclude>
     <ClInclude Include="perfect_reflector.h">
       <Filter>Header Files\dot filters</Filter>
+    <ClInclude Include="dilation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="erosion.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
