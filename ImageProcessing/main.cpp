@@ -52,12 +52,5 @@ int main() {
     cv::imshow("linear_tension", res_img);
 
 
-	morphology mor(img);
-	//cv::Mat res_img = mor.make();
-	//cv::imshow("mor", res_img);
-//    median_filter fil(img, 5);
-//	cv::Mat res_img = fil.make();
-//    cv::imshow("o", res_img);
-//
 	cv::waitKey(0);
 }
