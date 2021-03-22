@@ -7,10 +7,10 @@ inversion_filter::inversion_filter(cv::Mat image) : filter(), m_image(std::move(
 
 cv::Vec3b inversion_filter::get_new_pixel(int x, int y) {
 	cv::Vec3b source_pixel = m_image.at<cv::Vec3b>(cv::Point(x, y));
-	const auto r = 255 - source_pixel[0];
+	const auto b = 255 - source_pixel[0];
 	const auto g = 255 - source_pixel[1];
-	const auto b = 255 - source_pixel[2];
-	cv::Vec3b result_pixel = cv::Vec3b(r, g, b);
+	const auto r = 255 - source_pixel[2];
+	cv::Vec3b result_pixel = cv::Vec3b(b, g, r);
 	return result_pixel;
 }
 

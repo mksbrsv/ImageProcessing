@@ -54,6 +54,10 @@
     <ClCompile Include="morphology.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="linear_tension.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="perfect_reflector.cpp">
     <ClCompile Include="erosion.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -89,6 +93,12 @@
     <ClInclude Include="morphology.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+
+    <ClInclude Include="linear_tension.h">
+      <Filter>Header Files\dot filters</Filter>
+    </ClInclude>
+    <ClInclude Include="perfect_reflector.h">
+      <Filter>Header Files\dot filters</Filter>
     <ClInclude Include="dilation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
