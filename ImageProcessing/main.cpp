@@ -39,13 +39,20 @@ std::string type2str(int type) {
 }
 
 int main() {
-	cv::Mat img = cv::imread("C:\\Users\\arryo\\Pictures\\unn.png", cv::IMREAD_ANYCOLOR);
+	cv::Mat img = cv::imread("C:\\Users\\arryo\\Pictures\\index.png", cv::IMREAD_ANYCOLOR);
 	//cv::Mat img = cv::imread("C:\\Users\\Layzeld\\Downloads\\pic\\Annotation 2020-12-03 142825.png");
     //cv::Mat img = cv::imread("C:\\Users\\Layzeld\\Downloads\\pic\\Screenshot-1110.png");
 
-	morph::dilation mor(img);
+	morph::erosion mor(img);
+	int morph_size = 1;
+	cv::Mat se = cv::getStructuringElement(cv::MORPH_RECT, cv::Size(2 * morph_size + 1, 2 * morph_size + 1), cv::Point(morph_size, morph_size));
+	cv::Vec3b p = se.at<cv::Vec3b>(cv::Point(0, 0));
+	std::cout << p;
 	cv::Mat res_img = mor.make();
 	cv::imshow("mor", res_img);
+	cv::Mat out;
+	cv::dilate(img, out, se, cv::Point(morph_size, morph_size));
+	cv::imshow("out", out);
 	std::cout << "img chan" << img.channels() << std::endl;
 	std::cout << "res_img chan" << img.channels() << std::endl;
 	std::cout << "img type" << img.type() << std::endl;
