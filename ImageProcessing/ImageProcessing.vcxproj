@@ -148,10 +148,12 @@
     <ClCompile Include="gaussian_filter.cpp" />
     <ClCompile Include="gray_filter.cpp" />
     <ClCompile Include="inversion_filter.cpp" />
+    <ClCompile Include="linear_tension.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="matrix_filter.cpp" />
     <ClCompile Include="median_filter.cpp" />
     <ClCompile Include="morphology.cpp" />
+    <ClCompile Include="perfect_reflector.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="blur_filter.h" />
@@ -162,9 +164,11 @@
     <ClInclude Include="gaussian_filter.h" />
     <ClInclude Include="gray_filter.h" />
     <ClInclude Include="inversion_filter.h" />
+    <ClInclude Include="linear_tension.h" />
     <ClInclude Include="matrix_filter.h" />
     <ClInclude Include="median_filter.h" />
     <ClInclude Include="morphology.h" />
+    <ClInclude Include="perfect_reflector.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

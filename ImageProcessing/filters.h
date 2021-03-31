@@ -7,6 +7,10 @@
 #include "gaussian_filter.h"
 #include "median_filter.h"
 #include "morphology.h"
+#include "linear_tension.h"
+#include "perfect_reflector.h"
+#endif
 #include "dilation.h"
 #include "erosion.h"
 #endif
+
