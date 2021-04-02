@@ -46,7 +46,7 @@ int main() {
 
    // make_noise(img);
     cv::imshow("orig",img);
-	morph::erosion fil(img,5);
+	morph::dilation fil(img,5);
 	cv::Mat res_img = fil.make();
 
     cv::imshow("erosion", res_img);
