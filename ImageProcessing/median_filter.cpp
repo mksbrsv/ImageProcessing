@@ -31,11 +31,6 @@ cv::Mat median_filter::make() {
 			result_image.at<cv::Vec3b>(cv::Point(x, y)) = pixel;
 		}
 	}
-	// TODO: fix cropping image
-	//const int width = result_image.rows;
-	//const int height = result_image.cols;
-	//cv::Rect crop(0, 0, width - m_size * 3, height - m_size * 3);
-	//result_image = result_image(crop);
 	return result_image;
 }
 
@@ -76,8 +71,8 @@ cv::Vec3b median_filter::get_new_pixel(int x, int y) {
 	std::vector<uchar> B;
 	int radius = m_size / 2;
 	int k = 0;
-	for (int i = -radius; i <= radius; i++) {
-		for (int j = -radius; j <= radius; j++) {
+	for (int i = 0; i <= m_size; i++) {
+		for (int j = 0; j <= m_size; j++) {
 			if (x + j < 0 || y + i < 0 || m_image.cols - 1 < x + j || m_image.rows - 1 < y + i){}
 			else
 			{

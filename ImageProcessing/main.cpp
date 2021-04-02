@@ -49,7 +49,7 @@ int main() {
 	linear_tension fil(img);
 	cv::Mat res_img = fil.make();
 
-    cv::imshow("linear_tension", res_img);
+    cv::imshow("median_filter", res_img);
 
 
 	cv::waitKey(0);
