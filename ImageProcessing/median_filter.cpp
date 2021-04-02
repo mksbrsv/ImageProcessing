@@ -71,8 +71,8 @@ cv::Vec3b median_filter::get_new_pixel(int x, int y) {
 	std::vector<uchar> B;
 	int radius = m_size / 2;
 	int k = 0;
-	for (int i = 0; i <= m_size; i++) {
-		for (int j = 0; j <= m_size; j++) {
+	for (int i = -radius; i <= radius; i++) {
+		for (int j = -radius; j <= radius; j++) {
 			if (x + j < 0 || y + i < 0 || m_image.cols - 1 < x + j || m_image.rows - 1 < y + i){}
 			else
 			{
