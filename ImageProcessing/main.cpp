@@ -42,14 +42,14 @@ std::string type2str(int type) {
 int main() {
 	//cv::Mat img = cv::imread("C:\\Users\\arryo\\Pictures\\unn.png", cv::IMREAD_ANYCOLOR);
 	//cv::Mat img = cv::imread("C:\\Users\\Layzeld\\Downloads\\pic\\man.png");
-    cv::Mat img = cv::imread("C:\\Users\\Layzeld\\Downloads\\pic\\tl4qSLfsKp4.jpg");
+    cv::Mat img = cv::imread("C:\\Users\\Layzeld\\Downloads\\Morphology_1_Tutorial_Original_Image.jpg");
 
    // make_noise(img);
     cv::imshow("orig",img);
-	linear_tension fil(img);
+	morph::erosion fil(img,5);
 	cv::Mat res_img = fil.make();
 
-    cv::imshow("linear_tension", res_img);
+    cv::imshow("erosion", res_img);
 
 
 	cv::waitKey(0);

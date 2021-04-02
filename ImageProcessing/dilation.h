@@ -3,7 +3,7 @@
 namespace morph {
 class dilation : public filter {
 public:
-	dilation(cv::Mat image);
+	dilation(cv::Mat image, int size);
 	cv::Vec3b get_new_pixel(int x, int y) override;
 	cv::Mat make() override;
 private:
@@ -13,6 +13,7 @@ private:
 	int m_max = 0;
 	int m_contrast = 0;
 	bool m_is_calculated = false;
+	size_t m_size;
 };
 }
 

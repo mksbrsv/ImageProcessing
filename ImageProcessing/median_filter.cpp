@@ -31,11 +31,6 @@ cv::Mat median_filter::make() {
 			result_image.at<cv::Vec3b>(cv::Point(x, y)) = pixel;
 		}
 	}
-	// TODO: fix cropping image
-	//const int width = result_image.rows;
-	//const int height = result_image.cols;
-	//cv::Rect crop(0, 0, width - m_size * 3, height - m_size * 3);
-	//result_image = result_image(crop);
 	return result_image;
 }
 
