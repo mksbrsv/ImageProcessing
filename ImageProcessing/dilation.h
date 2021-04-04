@@ -5,6 +5,9 @@ class dilation : public filter {
 public:
 	dilation(cv::Mat image, int size);
 	cv::Vec3b get_new_pixel(int x, int y) override;
+	cv::Vec3b get_new_pixel(int x, int y, cv::Mat& strc);
+	cv::Mat struct_elem(int size);
+
 	cv::Mat make() override;
 private:
 	void calculate_contrast();

@@ -41,12 +41,11 @@ std::string type2str(int type) {
 
 int main() {
 	//cv::Mat img = cv::imread("C:\\Users\\arryo\\Pictures\\unn.png", cv::IMREAD_ANYCOLOR);
-	//cv::Mat img = cv::imread("C:\\Users\\Layzeld\\Downloads\\pic\\man.png");
-    cv::Mat img = cv::imread("C:\\Users\\Layzeld\\Downloads\\Morphology_1_Tutorial_Original_Image.jpg");
+    cv::Mat img = cv::imread("C:\\Users\\Layzeld\\Downloads\\test\\Morphology_2_Tutorial_Original_Image.jpg");
 
    // make_noise(img);
     cv::imshow("orig",img);
-	morph::dilation fil(img,5);
+	morph::dilation fil(img,9);
 	cv::Mat res_img = fil.make();
 
     cv::imshow("erosion", res_img);
