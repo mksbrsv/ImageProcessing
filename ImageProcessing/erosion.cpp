@@ -2,35 +2,12 @@
 
 namespace morph {
 
-	erosion::erosion(cv::Mat image, int size) : m_image(std::move(image)), m_size(size) {
+	erosion::erosion(cv::Mat image, int size, cv::Mat strc) : m_image(std::move(image)), m_size(size), m_strc(std::move(strc)) {
 		if (m_image.empty())
 			throw std::logic_error("Can't open image");
 	}
 
-	cv::Mat erosion::struct_elem(int size)
-	{
-		unsigned int i;
-		cv::Mat element;
-		do
-		{
-			std::cout << "1 - A rectangular structuring element\n" 
-					  << "2 - A cross-shaped structuring element\n"
-					  << "3 - An elliptic structuring element\n";
-
-			std::cin >> i;
-		} while (i>3 || i<1);
-		switch (i)
-		{
-		case 1: element = cv::getStructuringElement(cv::MORPH_RECT, cv::Size(m_size, m_size), cv::Point(m_size / 2, m_size / 2)); break;
-		case 2: element = cv::getStructuringElement(cv::MORPH_CROSS, cv::Size(m_size, m_size), cv::Point(m_size / 2, m_size / 2)); break;
-		case 3: element = cv::getStructuringElement(cv::MORPH_ELLIPSE, cv::Size(m_size, m_size), cv::Point(m_size / 2, m_size / 2)); break;
-
-		default: element = cv::getStructuringElement(cv::MORPH_RECT, cv::Size(m_size, m_size), cv::Point(m_size / 2, m_size / 2));break;
-		}
-
-
-		return element;
-	}
+	
 
 	cv::Vec3b erosion::get_new_pixel(int x, int y)
 	{
@@ -80,11 +57,10 @@ namespace morph {
 
 	cv::Mat erosion::make() {
 		cv::Mat result_image(m_image.rows, m_image.cols, CV_8UC3);
-		cv::Mat strc = struct_elem(m_size);
-		std::cout << strc<< "\n";
+		std::cout << m_strc<< "\n";
 		for (int y = 0; y < m_image.rows; y++)
 			for (int x = 0; x < m_image.cols; x++)
-				result_image.at<cv::Vec3b>(cv::Point(x, y)) = get_new_pixel(x,y,strc);
+				result_image.at<cv::Vec3b>(cv::Point(x, y)) = get_new_pixel(x,y,m_strc);
 		return result_image;
 	}
 }
