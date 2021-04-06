@@ -1,109 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Source Files\dot filters">
-      <UniqueIdentifier>{f820653e-bba1-43ae-931f-ce25250bec0c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\matrix filters">
-      <UniqueIdentifier>{8b3ed3b4-def2-4fd9-8300-6ba1be4d3d09}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\dot filters">
-      <UniqueIdentifier>{ab3e5a6e-05e0-4d84-86aa-a55c6ef9d458}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\matrix filters">
-      <UniqueIdentifier>{d0e6a428-1568-47fd-9605-6c4d40d5ffb4}</UniqueIdentifier>
-    </Filter>
+    <ClCompile Include="blur_filter.cpp" />
+    <ClCompile Include="dilation.cpp" />
+    <ClCompile Include="erosion.cpp" />
+    <ClCompile Include="filter.cpp" />
+    <ClCompile Include="gaussian_filter.cpp" />
+    <ClCompile Include="gray_filter.cpp" />
+    <ClCompile Include="inversion_filter.cpp" />
+    <ClCompile Include="linear_tension.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="matrix_filter.cpp" />
+    <ClCompile Include="median_filter.cpp" />
+    <ClCompile Include="morphology.cpp" />
+    <ClCompile Include="perfect_reflector.cpp" />
+    <ClCompile Include="Grad.cpp" />
+    <ClCompile Include="opening.cpp" />
+    <ClCompile Include="closing.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="filter.cpp">
-      <Filter>Source Files\dot filters</Filter>
-    </ClCompile>
-    <ClCompile Include="gray_filter.cpp">
-      <Filter>Source Files\dot filters</Filter>
-    </ClCompile>
-    <ClCompile Include="inversion_filter.cpp">
-      <Filter>Source Files\dot filters</Filter>
-    </ClCompile>
-    <ClCompile Include="matrix_filter.cpp">
-      <Filter>Source Files\matrix filters</Filter>
-    </ClCompile>
-    <ClCompile Include="blur_filter.cpp">
-      <Filter>Source Files\matrix filters</Filter>
-    </ClCompile>
-    <ClCompile Include="gaussian_filter.cpp">
-      <Filter>Source Files\matrix filters</Filter>
-    </ClCompile>
-    <ClCompile Include="median_filter.cpp">
-      <Filter>Source Files\matrix filters</Filter>
-    </ClCompile>
-    <ClCompile Include="morphology.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="linear_tension.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="perfect_reflector.cpp">
-    <ClCompile Include="erosion.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="dilation.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="filters.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="blur_filter.h">
-      <Filter>Header Files\matrix filters</Filter>
-    </ClInclude>
-    <ClInclude Include="filter.h">
-      <Filter>Header Files\dot filters</Filter>
-    </ClInclude>
-    <ClInclude Include="gaussian_filter.h">
-      <Filter>Header Files\matrix filters</Filter>
-    </ClInclude>
-    <ClInclude Include="gray_filter.h">
-      <Filter>Header Files\dot filters</Filter>
-    </ClInclude>
-    <ClInclude Include="inversion_filter.h">
-      <Filter>Header Files\dot filters</Filter>
-    </ClInclude>
-    <ClInclude Include="matrix_filter.h">
-      <Filter>Header Files\matrix filters</Filter>
-    </ClInclude>
-    <ClInclude Include="median_filter.h">
-      <Filter>Header Files\matrix filters</Filter>
-    </ClInclude>
-    <ClInclude Include="morphology.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-
-    <ClInclude Include="linear_tension.h">
-      <Filter>Header Files\dot filters</Filter>
-    </ClInclude>
-    <ClInclude Include="perfect_reflector.h">
-      <Filter>Header Files\dot filters</Filter>
-    <ClInclude Include="dilation.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="erosion.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    <ClInclude Include="blur_filter.h" />
+    <ClInclude Include="dilation.h" />
+    <ClInclude Include="erosion.h" />
+    <ClInclude Include="filter.h" />
+    <ClInclude Include="filters.h" />
+    <ClInclude Include="gaussian_filter.h" />
+    <ClInclude Include="gray_filter.h" />
+    <ClInclude Include="inversion_filter.h" />
+    <ClInclude Include="linear_tension.h" />
+    <ClInclude Include="matrix_filter.h" />
+    <ClInclude Include="median_filter.h" />
+    <ClInclude Include="morphology.h" />
+    <ClInclude Include="perfect_reflector.h" />
+    <ClInclude Include="Grad.h" />
+    <ClInclude Include="opening.h" />
+    <ClInclude Include="closing.h" />
   </ItemGroup>
 </Project>

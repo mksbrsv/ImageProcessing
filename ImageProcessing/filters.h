@@ -11,6 +11,9 @@
 #include "perfect_reflector.h"
 #include "dilation.h"
 #include "erosion.h"
+#include "Grad.h"
+#include "opening.h"
+#include "closing.h"
 
 
 #endif
