@@ -7,7 +7,9 @@ namespace morph {
 class erosion : public filter {
 public:
 	erosion(cv::Mat image, int size);
-	cv::Vec3b get_new_pixel(int x, int y) override;
+	cv::Mat struct_elem(int size);
+	cv::Vec3b get_new_pixel(int x, int y)override;
+	cv::Vec3b get_new_pixel(int x, int y, cv::Mat& strc);
 	cv::Vec3b calculate_new_pixel(cv::Vec3b result, cv::Vec3b current) const;
 	cv::Mat make() override;
 private:
