@@ -1,6 +1,5 @@
-﻿
-#ifndef erosion_H
-#define erosion_H
+﻿#ifndef EROSION_H
+#define EROSION_H
 #include "filter.h"
 
 namespace morph {

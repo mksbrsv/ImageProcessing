@@ -1,35 +1,34 @@
 #include "linear_tension.h"
-int CB;
-int CG;
-int CR;
-int minB;
-int minG;
-int minR;
-int max;
+namespace {
+	int CB;
+	int CG;
+	int CR;
+	int minB;
+	int minG;
+	int minR;
+	int max;
+}
 
-int GetContrast(cv::Mat image, uchar cn, int min)
-{
+int calculate_contrast(cv::Mat& image, uchar cn, int& min) {
     min = 255;
     max = 0;
-    for (int y = 0; y < image.rows; y++)
-        for (int x = 0; x < image.cols; x++)
-        {
-            if (image.at<cv::Vec3b>(cv::Point(x,y))[cn] < min)
-            {
-                min = image.at<cv::Vec3b>(cv::Point(x, y))[cn];
-            }
-            if (image.at<cv::Vec3b>(cv::Point(x, y))[cn] > max)
-            {
-                max = image.at<cv::Vec3b>(cv::Point(x, y))[cn];
-            }
-        }
+    for (int y = 0; y < image.rows; y++) {
+	    for (int x = 0; x < image.cols; x++) {
+		    if (image.at<cv::Vec3b>(cv::Point(x, y))[cn] < min) {
+			    min = image.at<cv::Vec3b>(cv::Point(x, y))[cn];
+		    }
+		    if (image.at<cv::Vec3b>(cv::Point(x, y))[cn] > max) {
+			    max = image.at<cv::Vec3b>(cv::Point(x, y))[cn];
+		    }
+	    }
+    }
     return max - min;
 }
 
-linear_tension::linear_tension(cv::Mat image) : filter(), m_image(std::move(image)){
-    CB = GetContrast(m_image, 0, minB);
-    CG = GetContrast(m_image, 1, minG);
-    CR = GetContrast(m_image, 2, minR);
+linear_tension::linear_tension(cv::Mat image) : filter(), m_image(std::move(image)) {
+    CB = calculate_contrast(m_image, 0, minB);
+    CG = calculate_contrast(m_image, 1, minG);
+    CR = calculate_contrast(m_image, 2, minR);
 	if (m_image.empty())
 		throw std::logic_error("Can't open image");
 }
@@ -47,9 +46,9 @@ cv::Mat linear_tension::make(){
 
 cv::Vec3b linear_tension::get_new_pixel(int x, int y)
 {
-    int intensity_of_B = ((m_image.at<cv::Vec3b>(cv::Point(x, y))[0] - minB) * (255 - 0) / CB);
-    int intensity_of_G = ((m_image.at<cv::Vec3b>(cv::Point(x, y))[1] - minG) * (255 - 0) / CG);
-    int intensity_of_R = ((m_image.at<cv::Vec3b>(cv::Point(x, y))[2] - minR) * (255 - 0) / CR);
+    const int intensity_of_B = (m_image.at<cv::Vec3b>(cv::Point(x, y))[0] - minB) * (255 - 0) / CB;
+    const int intensity_of_G = (m_image.at<cv::Vec3b>(cv::Point(x, y))[1] - minG) * (255 - 0) / CG;
+    const int intensity_of_R = (m_image.at<cv::Vec3b>(cv::Point(x, y))[2] - minR) * (255 - 0) / CR;
 
     cv::Vec3b result_pixel = cv::Vec3b(intensity_of_B, intensity_of_G, intensity_of_R);
     return result_pixel;

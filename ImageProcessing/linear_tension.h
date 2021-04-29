@@ -1,5 +1,5 @@
-#ifndef LINEAR_TENSION
-#define LINEAR_TENSION
+#ifndef LINEAR_TENSION_H
+#define LINEAR_TENSION_H
 #include "filter.h"
 
 // linear tension filter, use make() to do a filter

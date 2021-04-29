@@ -1,5 +1,5 @@
-#ifndef PERFECT_REFLECTOR
-#define PERFECT_REFLECTOR
+#ifndef PERFECT_REFLECTOR_H
+#define PERFECT_REFLECTOR_H
 #include "filter.h"
 
 // perfect reflector filter, use make() to do a filter
