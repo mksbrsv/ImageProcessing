@@ -62,17 +62,102 @@ cv::Mat struct_elem(int size)
 	return element;
 }
 
+void choose_filter(cv::Mat& image, int choice) {
+	using cv::imshow;
+	switch(choice) {
+	case 1: {
+		grayscale_filter gray(image);
+		imshow("grayscale", gray.make());
+		break;
+	}
+	case 2: {
+		inversion_filter inv(image);
+		imshow("inversion", inv.make());
+		break;
+	}
+	case 3: {
+		blur_filter blue(image);
+		imshow("blur", blue.make());
+		break;
+	}
+	case 4: {
+		gaussian_filter gaus(5, 3, image);
+		imshow("gaussian", gaus.make());
+		break;
+	}
+	case 5: {
+		median_filter med(image, 7);
+		imshow("median", med.make());
+		break;
+	}
+	case 6: {
+		morph::erosion ero(image, 7, struct_elem(7));
+		imshow("erosion", ero.make());
+		break;
+	}
+	case 7: {
+		morph::dilation dil(image, 7, struct_elem(7));
+		imshow("dilation", dil.make());
+		break;
+	}
+	case 8: {
+		morph::closing clo(image, 7, struct_elem(7));
+		imshow("closing", clo.make());
+		break;
+	}
+	case 9: {
+		morph::opening ope(image, 7, struct_elem(7));
+		imshow("opening", ope.make());
+		break;
+	}
+	case 10: {
+		perfect_reflector per(image);
+		imshow("perfect reflector", per.make());
+		break;
+	}
+	case 11: {
+		linear_tension lin(image);
+		imshow("linear tension", lin.make());
+		break;
+	}
+	case 12: {
+		morph::grad grad(image, 7, struct_elem(7));
+		imshow("grad", grad.make());
+		break;
+	}
+	case 13: {
+		std::cout << "Exit.....\n";
+		break;
+	}
+	default: 
+		std::cout << "Wrong number\n";
+		break;
+	}
+}
+
 int main() {
-	//cv::Mat img = cv::imread("C:\\Users\\arryo\\Pictures\\unn.png", cv::IMREAD_ANYCOLOR);
-    cv::Mat img = cv::imread("C:\\Users\\Layzeld\\Downloads\\test\\aa.png");
+	using std::cout;
+	using std::cin;
+	using std::endl;
+	cv::Mat img = cv::imread("C:\\Users\\arryo\\Pictures\\unn.png", cv::IMREAD_ANYCOLOR);
+    //cv::Mat img = cv::imread("C:\\Users\\Layzeld\\Downloads\\test\\aa.png");
+
+	int choice = 0;
+	while (true) {
+		cout << "Choose a filter:\n";
+		cout << "1 - Grayscale\n2 - Inversion\n3 - Blur\n4 - Gaussian Blur\n5 - Median\n6 - Erosion\n7 - Dilation\n8 - Closing\n9 - Opening\n10 - Perfect Reflector\n11 - Linear Tension\n12 - Grad\n13 - Exit\n>> ";
+		cin >> choice;
+		choose_filter(img, choice);
+		if (choice == 13) break;
+	}
 
    // make_noise(img);
-    cv::imshow("orig",img);
-	morph::closing fil(img,7, struct_elem(7));
-	cv::Mat res_img = fil.make();
-
-    cv::imshow("erosion", res_img);
-
-
-	cv::waitKey(0);
+//    cv::imshow("orig",img);
+//	morph::closing fil(img,7, struct_elem(7));
+//	cv::Mat res_img = fil.make();
+//
+//    cv::imshow("erosion", res_img);
+//
+//
+//	cv::waitKey(0);
 }
