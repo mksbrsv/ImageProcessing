@@ -142,10 +142,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="blur_filter.cpp" />
+    <ClCompile Include="closing.cpp" />
     <ClCompile Include="dilation.cpp" />
     <ClCompile Include="erosion.cpp" />
     <ClCompile Include="filter.cpp" />
     <ClCompile Include="gaussian_filter.cpp" />
+    <ClCompile Include="Grad.cpp" />
     <ClCompile Include="gray_filter.cpp" />
     <ClCompile Include="inversion_filter.cpp" />
     <ClCompile Include="linear_tension.cpp" />
@@ -153,21 +155,25 @@
     <ClCompile Include="matrix_filter.cpp" />
     <ClCompile Include="median_filter.cpp" />
     <ClCompile Include="morphology.cpp" />
+    <ClCompile Include="opening.cpp" />
     <ClCompile Include="perfect_reflector.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="blur_filter.h" />
+    <ClInclude Include="closing.h" />
     <ClInclude Include="dilation.h" />
     <ClInclude Include="erosion.h" />
     <ClInclude Include="filter.h" />
     <ClInclude Include="filters.h" />
     <ClInclude Include="gaussian_filter.h" />
+    <ClInclude Include="Grad.h" />
     <ClInclude Include="gray_filter.h" />
     <ClInclude Include="inversion_filter.h" />
     <ClInclude Include="linear_tension.h" />
     <ClInclude Include="matrix_filter.h" />
     <ClInclude Include="median_filter.h" />
     <ClInclude Include="morphology.h" />
+    <ClInclude Include="opening.h" />
     <ClInclude Include="perfect_reflector.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

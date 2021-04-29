@@ -55,9 +55,13 @@ cv::Mat morphology::erosion() const {
 }
 
 cv::Mat morphology::opening() const {
-	return cv::Mat();
+	cv::Mat result_image(m_image.rows, m_image.cols, CV_8UC3);
+
+	return result_image;
 }
 
 cv::Mat morphology::closing() const {
-	return cv::Mat();
+	cv::Mat result_image(m_image.rows, m_image.cols, CV_8UC3);
+
+	return result_image;
 }

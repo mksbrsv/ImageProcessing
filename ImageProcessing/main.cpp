@@ -37,17 +37,42 @@ std::string type2str(int type) {
   //std::cout << "max pisky dash ebati";
   return r;
 }
+cv::Mat struct_elem(int size)
+{
+	unsigned int i;
+	cv::Mat element;
+	do
+	{
+		std::cout << "1 - A rectangular structuring element\n"
+			<< "2 - A cross-shaped structuring element\n"
+			<< "3 - An elliptic structuring element\n";
 
+		std::cin >> i;
+	} while (i > 3 || i < 1);
+	switch (i)
+	{
+	case 1: element = cv::getStructuringElement(cv::MORPH_RECT, cv::Size(size, size), cv::Point(size / 2, size / 2)); break;
+	case 2: element = cv::getStructuringElement(cv::MORPH_CROSS, cv::Size(size, size), cv::Point(size / 2, size / 2)); break;
+	case 3: element = cv::getStructuringElement(cv::MORPH_ELLIPSE, cv::Size(size, size), cv::Point(size / 2, size / 2)); break;
+
+	default: element = cv::getStructuringElement(cv::MORPH_RECT, cv::Size(size, size), cv::Point(size / 2, size / 2)); break;
+	}
+
+
+	return element;
+}
 
 int main() {
-	cv::Mat img = cv::imread("C:\\Users\\arryo\\Pictures\\unn.png", cv::IMREAD_ANYCOLOR);
-	//cv::Mat img = cv::imread("C:\\Users\\Layzeld\\Downloads\\pic\\man.png");
-    //cv::Mat img = cv::imread("C:\\Users\\Layzeld\\Downloads\\pic\\tl4qSLfsKp4.jpg");
+	//cv::Mat img = cv::imread("C:\\Users\\arryo\\Pictures\\unn.png", cv::IMREAD_ANYCOLOR);
+    cv::Mat img = cv::imread("C:\\Users\\Layzeld\\Downloads\\test\\aa.png");
 
    // make_noise(img);
     cv::imshow("orig",img);
-	morph::dilation fil(img, 1);
+	morph::closing fil(img,7, struct_elem(7));
 	cv::Mat res_img = fil.make();
-    cv::imshow("linear_tension", res_img);
+
+    cv::imshow("erosion", res_img);
+
+
 	cv::waitKey(0);
 }
